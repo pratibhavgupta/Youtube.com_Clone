@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="mytitle">Document</title>
+    <link
+      rel="icon"
+      href="https://www.youtube.com/s/desktop/4ede54fa/img/favicon_32x32.png"
+    />
+    <style>
+      body {
+        margin: 3px;
+      }
+
+      #main {
+        display: grid;
+        grid-template-columns: 63% 34%;
+
+        background-color: #f9f9f9;
+        gap: 20px;
+        padding: 25px 100px 0px 100px;
+      }
+
+      /* #info{
+
+      } */
+      #video_details {
+        flex: 3;
+        height: 400px;
+      }
+      #recomondation {
+        flex: 1;
+        display: grid;
+      }
+      #recomondation img {
+        width: 100%;
+      }
+      #rec {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      #rec img {
+        width: 100%;
+      }
+      #navbar {
+        width: 100%;
+        height: 55px;
+        display: grid;
+        grid-template-columns: 27% 46% 25%;
+        align-items: center;
+        background-color: white;
+        position: sticky;
+        overflow: hidden;
+        top: 0;
+      }
+      #navbar input {
+        font-size: 15px;
+        height: 35px;
+        width: 100%;
+      }
+      #navbar button {
+        height: 41px;
+        width: 10%;
+      }
+      #navbar button img {
+        width: 22px;
+      }
+
+      #bar {
+        width: 26px;
+        height: 30px;
+        margin: 6px 0px 0px 22px;
+      }
+      #icon {
+        width: 110px;
+      }
+
+      #right {
+        display: grid;
+        grid-template-columns: 7% 12% 18%;
+        align-items: center;
+
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      #mic {
+        width: 25px;
+        height: 25px;
+        margin: auto;
+        margin-left: 10px;
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        padding: 10px;
+      }
+      #mic:hover {
+        background-color: #cbccc9;
+      }
+      #vid {
+        height: 25px;
+        width: 25px;
+      }
+      #bell {
+        width: 40px;
+        height: 40px;
+      }
+      #mid {
+        display: flex;
+      }
+      #photo {
+        border-radius: 15px;
+      }
+      #myimg {
+        display: grid;
+        grid-template-columns: 17% 83%;
+      }
+      #adv {
+        height: 20%;
+      }
+      #rec {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+      }
+      #maindiv {
+        width: 100%;
+        height: 110px;
+        display: grid;
+        grid-template-columns: 45% 50%;
+        gap: 10px;
+      }
+      #maindiv img {
+        width: 100%;
+        height: 80%;
+      }
+      #title {
+        width: 100%;
+      }
+      #rec h4 {
+        /* white-space: nowrap; */
+        overflow: hidden;
+        /* text-overflow: ellipsis; */
+        height: 38px;
+        margin: auto;
+      }
+      @media all and (min-width: 170px) and (max-width: 852px) {
+        #main {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body onload="playVideo()">
+    <div id="navbar">
+      <div id="myimg">
+        <div onclick="bar()">
+          <img
+            id="bar"
+            src="https://cdn-icons-png.flaticon.com/128/8370/8370204.png"
+            alt=""
+          />
+        </div>
+
+        <div>
+          <a href="index.html">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAAtCAMAAACj8gQpAAAAkFBMVEX////+AAAAAAAYGBgLCwvGxsaWlpYEBAQcHBzAwMAjIyMfHx/k5OTo6OgQEBB/f39HR0dWVlZhYWH+TU3/7++6urr/09P+4N+rq6tpaWn39/dbW1u0tLRNTU2hoaE6Ojr/5+f+oaD+Li7+FRX+Njb+YWH+vb3R0dH+gH/+j4/+V1d1dXX/ycn+sLCLi4sxMTFTy608AAACd0lEQVRYhe2WaXPaMBCGxcqHkPD64PIBmAYapXUD///fdSXGabAxtift9ItfZjBGx6OV9hBjkyZNmjRppFar43a73VjRj+Nq9e+Z35Yvp1lLp/P319FTBWmqh/Z9aTNrvZn2SxEv6FEkWXOkjhOrIq3/cQG8gdgf3djZbEMdDgA7xhaALe4ckCsl8A/L9flQ7oMtvjd4ASJkbIe4a9mbVYWU+yr7aBnBfYadLU0PKUvGQgHBg9Guww+fXwdzj59dqcU9my6EzFmkokfD584daDh384nyc3tucE+5ndvXOfALy0OFZs9ZWOwD5sWxvnF1HHss2BeV4R5c6Sdm5otEUXVyf93v6nsDbMI4B0w1gGYxClAOTRoLWLAQwb1xXcCKBSAi4soYHOmT0ZXDQWDSxX1tnuZbi8siHqaomAaVsVgS0n6Fwqm5Pu1CANJy5SJFcojAeGOmIO/gvje57Lhscj2MQlr5geOapZz8+gnXnC9IwdaO6Yx+Vxppc+9MtlwNssT0BlojzdzL5bRIZ26Cb/0Fe2kiA8qU5YpLHxcl5h63ndtBP+J8iWhCeDCXW66M4kh2cgf4M6NzMuEzlsvBQejiDohfimBzqDWXD9/nJxqQr2rueL8K5m5XHA3IzzXXM3F06I+jHKS6xRGVxU6je+vRB9fmjb1BJooftJQ118RZEOItb0T6IlRCy1BZXqmHxcSqt/6S1uCYdL+nPCl8KsMpSAc8hDmVYNPClYQoQ+ICjwGlsbICTp/OPNl/3yDpJDFXivxSXktbb8JruWNJok0Leawur1meJiG9FkFaXm1p9Mpr9LQ4/cX71Wj9j/vkpEmTJk1q6DfA4jUzrcbdhAAAAABJRU5ErkJggg=="
+              alt=""
+              id="icon"
+            />
+          </a>
+        </div>
+      </div>
+      <div id="mid">
+        <input type="text" id="query" placeholder="Search" />
+        <button onclick="searchVideos()">
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/482/482631.png"
+            alt=""
+          />
+        </button>
+        <img
+          id="mic"
+          src="https://cdn-icons-png.flaticon.com/128/7235/7235323.png"
+          alt=""
+        />
+      </div>
+      <div id="right">
+        <img
+          id="vid"
+          src="https://cdn2.iconfinder.com/data/icons/create-audio-visual/64/Recording-128.png"
+          alt=""
+        />
+        <div onclick="notification()">
+          <img
+            id="bell"
+            src="https://t4.ftcdn.net/jpg/03/28/42/15/240_F_328421598_MKx46E5XfDkTiAULAHIOrPXu8yeAgOht.jpg"
+            alt=""
+          />
+        </div>
+
+        <div onclick="alerts()">
+          <img
+            id="photo"
+            height="32"
+            width="32"
+            src="https://yt3.ggpht.com/yti/AJo0G0mNqKI-F6V8Clxg7MggIQXzEdGpvGv07oHEAEIUkA=s88-c-k-c0x00ffffff-no-rj-mo"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="details">
+        <div id="video_details"></div>
+        <div id="info"></div>
+      </div>
+      <div id="recomondation">
+        <div id="rec"></div>
+      </div>
+    </div>
+  </body>
+  <script src="video.js" ></script>
+</html>

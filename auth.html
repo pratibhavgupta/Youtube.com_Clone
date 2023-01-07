@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="icon" href="https://www.youtube.com/s/desktop/4ede54fa/img/favicon_32x32.png">
+  <style>
+    body {
+      margin: 3px 0px 3px 0px;
+      font-family: "Roboto", "HelveticaNeue-Light", sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #menu>div {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      gap: 27px;
+      align-items: center;
+    }
+
+    #line {
+      width: 10%;
+    }
+
+    a {
+      text-decoration: none;
+      color: #cbccc9;
+    }
+
+    #menu input {
+      width: 300px;
+      font-size: 15px;
+      color: white;
+      border: none;
+      border-bottom: 1px solid white;
+      background-color: #001773;
+    }
+
+    #menu button {
+      background-color: #1f80e0;
+      color: white;
+      padding: 5px 10px 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #log {
+      width: 40%;
+    }
+
+    #login {
+      width: 70%;
+      margin: auto;
+      display: grid;
+      padding: 10px 40px 10px 40px;
+      box-shadow: rgba(221, 221, 235, 0.2) 0px 7px 29px 0px;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      background-color: teal;
+      padding:30px;
+    }
+
+    #login input {
+      font-size: 20px;
+      height: 35px;
+      padding: 10px;
+    }
+
+    #extra {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 10px 0px 10px;
+      font-size: 20px;
+    }
+
+    a {
+      color: white;
+    }
+
+    #sub {
+      width: 19%;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    #container {
+      width: 90%;
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    #container >div{
+      background-color: coral;
+    }
+    #login button {
+      font-size: 20px;
+      height: 50px;
+      margin-top: 20px;
+      background-color: rgb(209, 212, 22);
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+
+    
+    #navbar {
+      width: 100%;
+      height: 55px;
+      display: grid;
+      grid-template-columns: 27% 49% 23%;
+      align-items: center;
+      background-color: white;
+      position: sticky;
+      overflow: hidden;
+      top: 0;
+    }
+
+    .sticky{
+      position: fixed;
+      top:0;
+      width:100%;
+    }
+
+    #navbar input {
+      font-size: 15px;
+      height: 35px;
+      width: 100%;
+    }
+
+    #navbar button {
+      height: 41px;
+      width: 11%;
+    }
+
+    #navbar button img {
+      width: 25px;
+    }
+
+    #bar {
+      width: 26px;
+      height: 30px;
+      margin: 6px 0px 0px 22px;
+    }
+
+    #icon {
+      width: 110px;
+    }
+
+    
+
+    #mic {
+      width: 25px;
+      height: 25px;
+      margin: auto;
+      margin-left: 10px;
+      background-color: #f9f9f9;
+      padding:10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    #mic:hover{
+      background-color: #cbccc9;
+    }
+
+    #vid {
+      height: 25px;
+      width: 25px;
+    }
+
+    #bell {
+      width: 40px;
+      height: 40px;
+    }
+
+    #mid {
+      display: flex;
+    }
+
+    #photo {
+      border-radius: 15px;
+    }
+
+    #myimg {
+      display: grid;
+      grid-template-columns: 17% 83%;
+    }
+
+    @media all and (min-width: 260px) and (max-width: 852px) {
+      #menu {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
+        height: 120px;
+      }
+
+      #container {
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar">
+    <div id="myimg">
+      <img id="bar" src="https://cdn-icons-png.flaticon.com/128/8370/8370204.png" alt="" />
+      <a href="Landingpage.html">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAAtCAMAAACj8gQpAAAAkFBMVEX////+AAAAAAAYGBgLCwvGxsaWlpYEBAQcHBzAwMAjIyMfHx/k5OTo6OgQEBB/f39HR0dWVlZhYWH+TU3/7++6urr/09P+4N+rq6tpaWn39/dbW1u0tLRNTU2hoaE6Ojr/5+f+oaD+Li7+FRX+Njb+YWH+vb3R0dH+gH/+j4/+V1d1dXX/ycn+sLCLi4sxMTFTy608AAACd0lEQVRYhe2WaXPaMBCGxcqHkPD64PIBmAYapXUD///fdSXGabAxtift9ItfZjBGx6OV9hBjkyZNmjRppFar43a73VjRj+Nq9e+Z35Yvp1lLp/P319FTBWmqh/Z9aTNrvZn2SxEv6FEkWXOkjhOrIq3/cQG8gdgf3djZbEMdDgA7xhaALe4ckCsl8A/L9flQ7oMtvjd4ASJkbIe4a9mbVYWU+yr7aBnBfYadLU0PKUvGQgHBg9Guww+fXwdzj59dqcU9my6EzFmkokfD584daDh384nyc3tucE+5ndvXOfALy0OFZs9ZWOwD5sWxvnF1HHss2BeV4R5c6Sdm5otEUXVyf93v6nsDbMI4B0w1gGYxClAOTRoLWLAQwb1xXcCKBSAi4soYHOmT0ZXDQWDSxX1tnuZbi8siHqaomAaVsVgS0n6Fwqm5Pu1CANJy5SJFcojAeGOmIO/gvje57Lhscj2MQlr5geOapZz8+gnXnC9IwdaO6Yx+Vxppc+9MtlwNssT0BlojzdzL5bRIZ26Cb/0Fe2kiA8qU5YpLHxcl5h63ndtBP+J8iWhCeDCXW66M4kh2cgf4M6NzMuEzlsvBQejiDohfimBzqDWXD9/nJxqQr2rueL8K5m5XHA3IzzXXM3F06I+jHKS6xRGVxU6je+vRB9fmjb1BJooftJQ118RZEOItb0T6IlRCy1BZXqmHxcSqt/6S1uCYdL+nPCl8KsMpSAc8hDmVYNPClYQoQ+ICjwGlsbICTp/OPNl/3yDpJDFXivxSXktbb8JruWNJok0Leawur1meJiG9FkFaXm1p9Mpr9LQ4/cX71Wj9j/vkpEmTJk1q6DfA4jUzrcbdhAAAAABJRU5ErkJggg=="
+          alt="" id="icon" />
+      </a>
+
+    </div>
+    <div id="mid">
+      <input type="text" id="query" placeholder="Search" />
+      <button onclick="searchVideos()">
+        <img src="https://cdn-icons-png.flaticon.com/128/482/482631.png" alt="" />
+      </button>
+      <img id="mic" src="https://cdn-icons-png.flaticon.com/128/7235/7235323.png" alt="" />
+    </div>
+
+  </div>
+  <hr>
+  <div id="container" >
+    <div id="login">
+      <h1>SignUp</h1>
+      <form>
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <input type="number" id="mobile" placeholder="Mobile">
+        <input type="text" id="description" placeholder="Discription">
+      </form>
+      <button onClick="Register()">Create an Account</button>
+    </div>
+
+    <div id="login">
+      <h1>Login</h1>
+      <form action="">
+        <input type="text" id="login-username" placeholder="username">
+        <input type="text" id="login-password" placeholder="password">
+
+      </form>
+      <button onclick="Login()">Login</button>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+
+</html>
